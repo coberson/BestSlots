@@ -28,6 +28,6 @@ clean:
 	@echo " Cleaning..."; 
 	$(RM) -r $(BUILDDIR) $(TARGET)
 	
-tester:
-	$(CC) $(CFLAGS) test/tester.cpp $(INC) -o bin/tester
+#tester:
+	#$(CC) $(CFLAGS) test/tester.cpp $(INC) -o bin/tester
 

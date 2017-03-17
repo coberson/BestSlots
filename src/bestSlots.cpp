@@ -4,7 +4,7 @@
 #include <algorithm>//next_permutation
 #include <functional>//bind,function
 
-#include "perm.hpp"
+#include "partition.hpp"
 #include "bestSlots.hpp"
 
 using namespace std;
