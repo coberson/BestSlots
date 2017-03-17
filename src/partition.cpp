@@ -77,13 +77,3 @@ void Partition::scrollFunction(function<int(const vector<int>& v)> F){
 		}	
 }
 
-int display(const vector<int>& v){
-	cout<< v;
-	return 0;
-}
-void testPartition()
-{
-	Partition p(4,3);
-	p.scrollFunction(display);	
-}
-	

@@ -176,38 +176,4 @@ ostream& operator<<(ostream & flow, BestSlots bs){
 	return flow;
 }
 
-void testBestSlots(){
-	int nbStudents = 3;
-	int nbSlots = 5;
-	//setCutWeek(8,12); // 8 slots on Monday, 12 slots on Tuesday
-	vector<vector<int> > weights(3, vector<int>(20,1));
-	for(int i(0);i<8;i++) weights[0][i] = 2;
-	for(int i(0);i<8;i++) weights[1][i] = 2;
-	for(int i(8);i<20;i++) weights[2][i] = -2;
-	for(int i(14);i<20;i++) weights[1][i] = -2;
-	BestSlots bs(weights);
-	
-	vector<int> cutWeek;
-	cutWeek.push_back(8);
-	cutWeek.push_back(20);
-	bs.setCutWeek(cutWeek);
-	std::vector<int> studentSlots;
-	studentSlots.reserve(nbStudents);
-	studentSlots.push_back(3);
-	studentSlots.push_back(4);
-	studentSlots.push_back(3);
-	cout<<studentSlots;
-	bs.setSlots(studentSlots);
-	
-	vector<int> weightPauses;
-	weightPauses.push_back(2);
-	weightPauses.push_back(-1);
-	weightPauses.push_back(-2);
-	weightPauses.push_back(-3);
-	weightPauses.push_back(-3);
-	weightPauses.push_back(-3);
-	bs.setWeightPauses(weightPauses);
-	
-	cout<<bs<<endl;		
-}
 

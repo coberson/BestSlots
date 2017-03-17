@@ -15,6 +15,8 @@ SRCEXT := cpp
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
 INC := -I include
+
+
  
 $(TARGET): $(OBJECTS)
 	@echo " Linking..."
@@ -28,6 +30,13 @@ clean:
 	@echo " Cleaning..."; 
 	$(RM) -r $(BUILDDIR) $(TARGET)
 	
-#tester:
-	#$(CC) $(CFLAGS) test/tester.cpp $(INC) -o bin/tester
+tester: $(OBJECTS)
+# $(CXX) $(CXXFLAGS) test/tester.cpp $(INC) -o bin/tester
+	@mkdir -p $(BUILDDIR)
+	$(CXX) $(INC) -c -o $(BUILDDIR)/tester.o test/tester.cpp $(CXXFLAGS)
+	$(CXX) $(OBJECTS) $(BUILDDIR)/tester.o -o bin/tester
+	
+
+	
+	
 
