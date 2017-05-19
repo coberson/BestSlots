@@ -8,5 +8,5 @@ Compilation:
 
 	make clean
 	
-	make
+	make tester
 	
