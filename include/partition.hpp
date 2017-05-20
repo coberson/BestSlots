@@ -27,8 +27,8 @@ class Partition{
 	private:
 		int N, k; // N integer to be partitionned, k length of partition vector
 		std::vector<int> currentPartition;
-		int maximalValue;
-		std::vector<int> maximalPartition;
+		int maximalValue;// maximal weight
+		std::vector<int> maximalPartition; // partition corresponding to this maximal weight
 	 
 };
 

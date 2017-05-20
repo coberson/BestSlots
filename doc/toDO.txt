@@ -1,0 +1,12 @@
+- make other tests to see if best slots are found
+
+- remove outputs in bestslots.cpp
+
+- make it possible to show several best slots
+
+- work on view (part for input of participants, part for output (confirmation?))
+
+- work on simplification (remove irrelevant permutations)
+
+- test for efficiency (on the other side, only one run!) 
+

@@ -43,7 +43,7 @@ vector<int> Partition::getMaximalPartition(){
 }
 
 bool Partition::nextPartition(){
-	/*find the next ordered partition, means that we will have to permute*/
+	/*find the next ordered partition, meaning that we will have to permute to go through all partitions*/
 	vector<int> indexP(0);
 	for (int i(k-1);i >= 0; i--){
 		if (currentPartition[i] < (currentPartition[k-1]-1))
@@ -65,15 +65,19 @@ bool Partition::nextPartition(){
 }
 
 void Partition::scrollFunction(function<int(const vector<int>& v)> F){
+	/* go through all (N,K) partitions and all the permutations of these partitions;
+	update maximalValue and maximalPartition for function F*/
+	
 	vector<int> tempPermutation(currentPartition);
+	setMaximalPartition(F(tempPermutation),tempPermutation);
+	while (next_permutation(tempPermutation.begin(),tempPermutation.end())) //permute
 		setMaximalPartition(F(tempPermutation),tempPermutation); 
-	while (next_permutation(tempPermutation.begin(),tempPermutation.end()))
-		setMaximalPartition(F(tempPermutation),tempPermutation); 
-	while (nextPartition()){
+	while (nextPartition()){//jump to next partition
 		tempPermutation = currentPartition;
 		setMaximalPartition(F(tempPermutation),tempPermutation); 
-		while (next_permutation(tempPermutation.begin(),tempPermutation.end()))	
-			setMaximalPartition(F(tempPermutation),tempPermutation); 
-		}	
+		while (next_permutation(tempPermutation.begin(),tempPermutation.end())){	//permute
+			setMaximalPartition(F(tempPermutation),tempPermutation);
+		}
+	}	
 }
 

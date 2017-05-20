@@ -29,6 +29,12 @@ class BestSlots{
 	
 	std::vector<int> weightForPerm(const std::vector<int>& perm);
 	
+	std::vector<int> explore();//19.5
+	
+	void setBestSol(std::vector<int> sol);
+	
+	std::vector<int> getBestSol();
+	
 	private:
 		//unsigned smallSlot; // smallest intervall of time: for example 15 min 
 		std::vector<int> cutWeek; // consecutive available small slots per day or per session, written as a cumulative sum: 8, 20 instead of 8 on Monday, 12 on Tuesday
@@ -42,6 +48,7 @@ class BestSlots{
 		std::vector<int> weightPauses; // negative or positive weight given to the pause in the middle of session, as a function of their number
 		std::vector<int> sessionRep; // to keep track of the current session permutation 
 		int beginIndex; // to keep track of the beginning index for the current session
+		std::vector<int> bestSol;
 	
 };
 
