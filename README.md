@@ -2,7 +2,9 @@ Finding an optimal timetable for tutors:
 
 Partition - class to generate all permutations of one given partition of the pause slots 
 
-BestSlots - class to generate all possible configurations and give best one or list minimal ones
+BestSlots - class to generate all possible configurations and one optimal or list all optimal ones
+
+How it works: go through all possible permutations of the students, and through all combinations of pauses inside one session
 
 Compilation:
 
@@ -20,7 +22,7 @@ Second would prefer Monday, can come on the six first slots on Tuesday
 
 Third can come only on Monday
 
-Teacher prefers not to have pauses during a teaching session
+Tutor prefers not to have pauses during a teaching session
 
 Printing weights: --> variable weights
 

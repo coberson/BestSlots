@@ -1,3 +1,6 @@
+- make it possible to skip a session (for the time being, takes sessions in order and skips to next session when full); ideas: 1-cheat by constructing new cutWeek vector, removing some sessions 
+2-put all sessions together?
+
 - make other tests to see if best slots are found
 
 - remove outputs in bestslots.cpp
@@ -8,5 +11,9 @@
 
 - work on simplification (remove irrelevant permutations)
 
+- make complexity estimation: nbS! permutations, importance of the number of free slots
+
 - test for efficiency (on the other side, only one run!) 
+
+New way of thinking: begin with students with the less possibilities, attribute session(s)
 

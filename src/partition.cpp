@@ -1,6 +1,11 @@
 #include "partition.hpp"
 using namespace std;
 
+int display(const vector<int>& v){
+	cout<< v;
+	return 0;
+}
+
 ostream& operator<<(ostream & flow, vector<int> vec){
 	int n1 = vec.size();
 	if (n1 == 0)

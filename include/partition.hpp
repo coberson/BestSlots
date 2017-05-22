@@ -9,6 +9,8 @@
 
 std::ostream& operator<<(std::ostream & flow, std::vector<int> vec);
 
+int display(const std::vector<int>& v);
+
 class Partition{
 	/*generate all k length - partitions of integer N*/
 	public:
